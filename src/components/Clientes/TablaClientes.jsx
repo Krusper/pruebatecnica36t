@@ -36,7 +36,7 @@ const TablaClientes = () => {
                                             <button style={{fontWeight:'bold'}} type="button" class="btn btn-success" onClick={() => GoNav('editar-cliente', Res)}>Editar</button>
                                         </div>
                                         <div className='ContenedorBtnDeny'>
-                                            <button style={{fontWeight:'bold'}} type="button" class="btn btn-danger">X</button>
+                                            <button style={{fontWeight:'bold'}} type="button" class="btn btn-danger">Eliminar</button>
                                         </div>
                                     </div>
                                 </td>

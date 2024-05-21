@@ -8,6 +8,8 @@ const LayoutContainer = styled.div`
     }
     .TituloH1 {
         margin: 0;
+        font-weight: bold;
+        color: #333333;
     }
 
     .AlterClienteBody {
@@ -47,7 +49,7 @@ const LayoutContainer = styled.div`
         justify-content: space-evenly;
     }
     .AlterClienteForm {
-        background: #e6f3f6;
+        background: #ecf0ee;
         padding: 15px;
         margin-top: 2vh;
         border-radius: 7px;

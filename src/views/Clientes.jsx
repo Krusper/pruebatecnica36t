@@ -22,7 +22,7 @@ const Clientes = () => {
           // setValue={HandleUsuario}
           // metodo={() => IniciarSesion(Usuario, Contraseña)}
       />
-        <button type="button" class="btn btn-primary" onClick={()=> GoNav('nuevo-cliente')}>Agregar Cliente</button>
+        <button type="button" class="btn btn-primary" style={{fontWeight: 'bold'}} onClick={()=> GoNav('nuevo-cliente')}>Agregar Cliente</button>
       </div>
       <TablaClientes></TablaClientes>
 
