@@ -18,44 +18,65 @@ export const useAlterCliente = () => {
     const HandleOriginalData = (data) => setOrigianlData(data) 
 
 
+    const VerificarCorreo = (correo) =>{
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(correo)
+    }
+
 
     const CrearCliente = async (nombre, telefono, correo) =>{
 
-        try {
+        
+        if (VerificarCorreo(correo)) {
+            
+            try {
+    
+                let datosCliente = {
+                    "nombre_comercial": `${nombre}`,
+                    "telefono": `${telefono}`,
+                    "correo": `${correo}`
+                }
+                let config = {
+                    method: 'post',
+                    url: `https://package-thumbnail-greater-actual.trycloudflare.com/api/v1/clientes/`,
+                    headers: { 'Content-Type': 'application/json' },
+                    data: datosCliente
+                };
+                let ResCreacionCliente = await axios(config)
+                if (ResCreacionCliente.status == 201) {
+                    Swal.fire({
+                        title: 'Cliente creado',
+                        // text: `Cliente agregado correctamente`,
+                        icon: 'succes',
+                        timer: 1000,
+                        timerProgressBar: true,
+                        position: 'top',
+                        confirmButtonText: 'Aceptar',
+                        confirmButtonColor: '#52C150'
+                    })
+                    .then(res => {
+                        if (res.isConfirmed || res.dismiss == Swal.DismissReason.timer) {
+                            GoListCltes()   
+                        }
+                    })
+                }
+    
+            } catch (error) {
+                console.error(error)
+            }        
+        }else{
+            Swal.fire({
+                title: 'El correo no es valido',
+                text: `Verifique el dato`,
+                icon: 'warning',
+                timer: 2500,
+                timerProgressBar: true,
+                position: 'top',
+                confirmButtonText: 'Aceptar',
+                confirmButtonColor: '#52C150'
+            })
+        }
 
-            let datosCliente = {
-                "nombre_comercial": `${nombre}`,
-                "telefono": `${telefono}`,
-                "correo": `${correo}`
-            }
-            let config = {
-                method: 'post',
-                url: `https://package-thumbnail-greater-actual.trycloudflare.com/api/v1/clientes/`,
-                headers: { 'Content-Type': 'application/json' },
-                data: datosCliente
-            };
-            let ResCreacionCliente = await axios(config)
-            if (ResCreacionCliente.status == 201) {
-                Swal.fire({
-                    title: 'Cliente creado',
-                    // text: `Cliente agregado correctamente`,
-                    icon: 'succes',
-                    timer: 1000,
-                    timerProgressBar: true,
-                    position: 'top',
-                    confirmButtonText: 'Aceptar',
-                    confirmButtonColor: '#52C150'
-                })
-                .then(res => {
-                    if (res.isConfirmed || res.dismiss == Swal.DismissReason.timer) {
-                        GoListCltes()   
-                    }
-                })
-            }
-
-        } catch (error) {
-            console.error(error)
-        }        
     }
     const ActualizarCliente = async (nombre, telefono, correo) =>{
 

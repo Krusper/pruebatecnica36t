@@ -57,6 +57,7 @@ const AlterCliente = () => {
                 placehold={state?.telefono}
                 value={Telefono}
                 setValue={HandleTelefono}
+                maxLength={10}
                 forceLayoutSty={{margin: '2vh 0'}}
             />
 
