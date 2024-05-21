@@ -1,6 +1,5 @@
 import React from 'react'
-import { LayoutInpt } from '../../../themes/layout'
-import ini from '../../../assets/SVGs/Inicio.svg'
+import { LayoutInpt } from '../../themes/layouts'
 import useInpt from './useInpt'
 
 const Inpt = (props) => {

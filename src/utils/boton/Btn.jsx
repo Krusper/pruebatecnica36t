@@ -1,5 +1,5 @@
 import React from 'react'
-import { LayoutBtn } from '../../../themes/layout'
+import { LayoutBtn } from '../../themes/layouts'
 
 const Btn = (props) => {
   //    Configuraciones del Input customizado

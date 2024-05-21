@@ -1,7 +1,58 @@
 import styled from "styled-components";
 
 const LayoutContainer = styled.div`
-    
+    .txtAlterType {
+        margin: 0;
+        font-weight: 500;
+        opacity: 0.7
+    }
+    .TituloH1 {
+        margin: 0;
+    }
+
+    .AlterClienteBody {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: 2vh auto;
+    }
+    .AlterTitulos {
+        margin-bottom: 2vh;
+    }
+
+    .OptionsAlter {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    .separador {
+        background: #8a8a8a;
+        padding: 2px;
+        border-radius: 20px;
+        opacity: 0.5;
+    }
+    .ClientesTools {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 95%;
+        margin: 2vh auto 1vh auto;
+    }
+    .ContenedorTabla {
+        width: 95%;
+        margin: auto;
+    }
+    .ContenedorAcciones {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .AlterClienteForm {
+        background: #e6f3f6;
+        padding: 15px;
+        margin-top: 2vh;
+        border-radius: 7px;
+    }
+
 
 `
 const LayoutBtn = styled.div`

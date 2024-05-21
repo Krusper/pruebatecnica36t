@@ -2,6 +2,8 @@ import React from 'react'
 import Clientes from '../views/Clientes'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import PrivateRoute from './privateRoute'
+import AddCliente from '../views/AddCliente'
+import EditCliente from '../views/EditCliente'
 
 
 
@@ -12,6 +14,14 @@ const Navigation = () => {
       <BrowserRouter>
           <Routes>
                
+               
+              <Route exact path='/' element={
+                
+                <PrivateRoute>
+                    <Clientes></Clientes>
+                </PrivateRoute>
+              }/>
+
               <Route path='/clientes' element={
                 
                 <PrivateRoute>
@@ -20,18 +30,18 @@ const Navigation = () => {
               }/>
 
               
-              <Route path='/nuevo-cliente' element={
+              <Route path='/clientes/nuevo-cliente' element={
                 
                 <PrivateRoute>
-                    <Clientes></Clientes>
+                    <AddCliente></AddCliente>
                 </PrivateRoute>
               }/>
 
               
-              <Route path='/editar/:idcliente' element={
+              <Route path='/clientes/editar-cliente' element={
                 
                 <PrivateRoute>
-                    <Clientes></Clientes>
+                    <EditCliente></EditCliente>
                 </PrivateRoute>
               }/>
   
